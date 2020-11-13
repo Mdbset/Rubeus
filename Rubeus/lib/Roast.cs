@@ -211,12 +211,12 @@ namespace Rubeus
                     try
                     {
                         File.AppendAllText(outFilePath, hashString + Environment.NewLine);
+                        Console.WriteLine("[*] Hash written to {0}\r\n", outFilePath);
                     }
                     catch (Exception e)
                     {
                         Console.WriteLine("Exception: {0}", e.Message);
                     }
-                    Console.WriteLine("[*] Hash written to {0}\r\n", outFilePath);
                 }
                 else
                 {
@@ -745,12 +745,12 @@ namespace Rubeus
                                             try
                                             {
                                                 File.AppendAllText(outFilePath, hash + Environment.NewLine);
+                                                Console.WriteLine("[*] Hash written to {0}\r\n", outFilePath);
                                             }
                                             catch (Exception e)
                                             {
                                                 Console.WriteLine("Exception: {0}", e.Message);
                                             }
-                                            Console.WriteLine("[*] Hash written to {0}\r\n", outFilePath);
                                         }
                                         else if (simpleOutput)
                                         {
@@ -863,12 +863,12 @@ namespace Rubeus
                 try
                 {
                     File.AppendAllText(outFilePath, hash + Environment.NewLine);
+                    Console.WriteLine("[*] Hash written to {0}", outFilePath);
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine("Exception: {0}", e.Message);
                 }
-                Console.WriteLine("[*] Hash written to {0}", outFilePath);
             }
             else if (simpleOutput)
             {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Text;
+using System.IO;
 
 
 namespace Rubeus.Commands
@@ -84,7 +85,16 @@ namespace Rubeus.Commands
             {
                 // output kerberoasted hashes to a file instead of to the console
                 outFile = arguments["/outfile"];
+
+                // checking if output directory exists
+                var outputDirectory = Path.GetDirectoryName(outFile);
+                if(!Directory.Exists(outputDirectory))
+                {
+                    Console.WriteLine("/outfile: parameter contains a nonexist directory.");
+                    return;
+                }
             }
+
             if (arguments.ContainsKey("/simple"))
             {
                 // output kerberoasted hashes to the output file format instead, to the console
